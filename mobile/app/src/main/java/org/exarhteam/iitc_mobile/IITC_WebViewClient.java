@@ -289,8 +289,7 @@ public class IITC_WebViewClient extends WebViewClient {
         }
         else if (uriHost.equals("accounts.google.com") ||
                  uriHost.equals("appengine.google.com") ||
-                 uriPath.contains("conflogin") ||
-                 uriPath.contains("ServiceLogin")) {
+                 uriHost.equals("accounts.youtube.com")) {
             Log.d("Google login");
             return false;
         } else {
