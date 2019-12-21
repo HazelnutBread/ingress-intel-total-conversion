@@ -14,7 +14,7 @@ window.plugin.scaleBar = scaleBar;
 // system already.
 scaleBar.options = { imperial: false };
 
-scaleBar.mobileOptions = { position: 'bottomright', maxWidth: 100 };
+scaleBar.mobileOptions = { position: 'topleft', maxWidth: 100 };
 
 scaleBar.desktopOptions = { position: 'topleft', maxWidth: 200 };
 
