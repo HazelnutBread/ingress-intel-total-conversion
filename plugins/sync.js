@@ -689,9 +689,14 @@ window.plugin.sync.storeLocal = function(mapping) {
 window.plugin.sync.loadLocal = function(mapping) {
   var objectJSON = localStorage[mapping.key];
   if(!objectJSON) return;
+  try {
+    var obj = JSON.parse(objectJSON);
+  } catch (e) {
+    return;
+  }
   plugin.sync[mapping.field] = mapping.convertFunc
-                          ? mapping.convertFunc(JSON.parse(objectJSON))
-                          : JSON.parse(objectJSON);
+                          ? mapping.convertFunc(obj)
+                          : obj;
 };
 
 window.plugin.sync.loadUUID = function() {
